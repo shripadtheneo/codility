@@ -17,13 +17,13 @@ def long_inc_part_arr(A):
         if A[i] < A[i+1]:
             inter_arr.append(str(A[i+1]))
         else:
-            if len(final_arr) < len(inter_arr):
-                final_arr = inter_arr
             inter_arr = [str(A[i + 1])]
+        if len(final_arr) < len(inter_arr):
+            final_arr = inter_arr
 
     return final_arr
 
 
 if __name__ == '__main__':
-    A = [1, 3, 4, 2, 9, 7, 3, 8, 1]
+    A = [1, 7, 4, 2, 9, 1, 3, 8, 9]
     print (long_inc_part_arr(A))
