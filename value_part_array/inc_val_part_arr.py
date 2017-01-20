@@ -26,7 +26,7 @@ def long_inc_part_arr(sequence):
 
 
 def long_inc_part_arr(sequence):
-    max = (0, 0)
+    longest = (0, 0)
     curr = (0, 0)
     first, last = 0, 0
     for i in range(1, len(sequence)):
@@ -35,10 +35,10 @@ def long_inc_part_arr(sequence):
             curr = first, last
         else:
             first, last = i, i
-        if curr[1] - curr[0] > max[1] - max[0]:
-            max = curr
+        if curr[1] - curr[0] > longest[1] - longest[0]:
+            longest = curr
 
-    return sequence[max[0]:max[1] + 1]
+    return sequence[longest[0]:longest[1] + 1]
 
 if __name__ == '__main__':
     sequence = "134297381"
