@@ -8,7 +8,7 @@ Given Above, implement a program to return the longest "Increasing Value Part Ar
 input. e.g. "134297381"
 """
 
-
+"""
 def long_inc_part_arr(sequence):
     length = len(sequence)
     longest_arr = []
@@ -22,7 +22,23 @@ def long_inc_part_arr(sequence):
             longest_arr = inter_arr
 
     return longest_arr
+"""
 
+
+def long_inc_part_arr(sequence):
+    max = (0, 0)
+    curr = (0, 0)
+    first, last = 0, 0
+    for i in range(1, len(sequence)):
+        if sequence[i] > sequence[i - 1]:
+            last = i
+            curr = first, last
+        else:
+            first, last = i, i
+        if curr[1] - curr[0] > max[1] - max[0]:
+            max = curr
+
+    return sequence[max[0]:max[1] + 1]
 
 if __name__ == '__main__':
     sequence = "134297381"
