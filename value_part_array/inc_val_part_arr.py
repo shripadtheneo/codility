@@ -9,21 +9,21 @@ input. e.g. "134297381"
 """
 
 
-def long_inc_part_arr(A):
-    length = len(A)
-    final_arr = []
-    inter_arr = [str(A[0])]
+def long_inc_part_arr(sequence):
+    length = len(sequence)
+    longest_arr = []
+    inter_arr = [sequence[0]]
     for i in range(length - 1):
-        if A[i] < A[i+1]:
-            inter_arr.append(str(A[i+1]))
+        if sequence[i] < sequence[i+1]:
+            inter_arr.append(sequence[i + 1])
         else:
-            inter_arr = [str(A[i + 1])]
-        if len(final_arr) < len(inter_arr):
-            final_arr = inter_arr
+            inter_arr = [sequence[i + 1]]
+        if len(longest_arr) < len(inter_arr):
+            longest_arr = inter_arr
 
-    return final_arr
+    return longest_arr
 
 
 if __name__ == '__main__':
-    A = [1, 7, 4, 2, 9, 1, 3, 8, 9]
-    print (long_inc_part_arr(A))
+    sequence = "134297381"
+    print (long_inc_part_arr(sequence))
