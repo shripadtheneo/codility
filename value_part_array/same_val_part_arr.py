@@ -10,13 +10,21 @@ input. e.g. "011011100"
 
 
 def long_same_part_arr(sequence):
-    length = len(sequence)
-    longest_arr = []
-    inter_arr = [sequence[0]]
+    longest = (0, 0)
+    curr = (0, 0)
+    first, last = 0, 0
+    for i in range(1, len(sequence)):
+        if sequence[i] == sequence[i - 1]:
+            last = i
+            curr = first, last
+        else:
+            first, last = i, i
+        if curr[1] - curr[0] > longest[1] - longest[0]:
+            longest = curr
 
-    return longest_arr
+    return sequence[longest[0]:longest[1] + 1]
 
 
 if __name__ == '__main__':
-    sequence = "011011100"
+    sequence = "01101110000"
     print (long_same_part_arr(sequence))
