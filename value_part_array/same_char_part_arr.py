@@ -35,8 +35,8 @@ if __name__ == '__main__':
 Note:
     This program is solved using the Dynamic Programming approach. First concentration was on the
     time complexity so need to traverse the loop only once causing us to make sure that we keep the
-    result stored result in my first python function which is commented out. Result was time
-    complexity to be O(n). (Since there is only once looping though the sequence as well as other have
+    result stored in my first python function which is commented out. Result was time
+    complexity to be O(n). (Since there is only once looping through the sequence as well as other have
     constant time so time complexity is O(n)). Then there was need of reducing the space complexity so
     rather than using two list, 2 array of size just 2 are used reducing the space complexity too.
 
