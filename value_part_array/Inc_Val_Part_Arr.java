@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class Inc_Val_Part_Arr {
 
-    private static int[] inc_val_part_arr(int[] sequence, int length){
+    private static int[] incValPartArr(int[] sequence, int length){
         int[] longest = {0, 0};
         int[] curr = {0, 0};
         int first = 0;
@@ -37,6 +37,7 @@ public class Inc_Val_Part_Arr {
     }
 
     public static void main(String[] args) {
+        System.out.println("Please input the array: ");
         Scanner scan = new Scanner(System.in);
         String str = scan.next();
         int length = str.length();
@@ -46,6 +47,6 @@ public class Inc_Val_Part_Arr {
             sequence[i] = Character.getNumericValue(charstr[i]);
         }
         System.out.println("Longest increasing value part is: "
-                + Arrays.toString(inc_val_part_arr(sequence, length)) + "\n");
+                + Arrays.toString(incValPartArr(sequence, length)) + "\n");
     }
 }

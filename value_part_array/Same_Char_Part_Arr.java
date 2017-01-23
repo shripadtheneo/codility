@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 public class Same_Char_Part_Arr {
 
-    private static char[] same_char_part_arr(char[] sequence, int length){
+    private static char[] sameCharPartArr(char[] sequence, int length){
         int[] longest = {0, 0};
         int[] curr = {0, 0};
         int first = 0;
@@ -39,11 +39,12 @@ public class Same_Char_Part_Arr {
     }
 
     public static void main(String[] args) {
+        System.out.println("Please input the array: ");
         Scanner scan = new Scanner(System.in);
         String str = scan.next();
         int length = str.length();
         char[] sequence = str.toCharArray();
         System.out.println("Longest same value part is: "
-                + Arrays.toString(same_char_part_arr(sequence, length)) + "\n");
+                + Arrays.toString(sameCharPartArr(sequence, length)) + "\n");
     }
 }

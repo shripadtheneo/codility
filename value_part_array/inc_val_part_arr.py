@@ -41,5 +41,6 @@ def long_inc_part_arr(sequence):
     return sequence[longest[0]:longest[1] + 1]
 
 if __name__ == '__main__':
-    sequence = "134297381"
+    print "Please input the array: "
+    sequence = raw_input()
     print (long_inc_part_arr(sequence))

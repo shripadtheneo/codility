@@ -28,7 +28,8 @@ def long_same_part_arr(sequence):
 
 
 if __name__ == '__main__':
-    sequence = "AaBBBcC"
+    print "Please input the array: "
+    sequence = raw_input()
     print (long_same_part_arr(sequence))
 
 """
