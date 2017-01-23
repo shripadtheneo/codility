@@ -1,5 +1,5 @@
 import java.util.Arrays;
-
+import java.util.Scanner;
 
 /**
  * Created by shri on 2017/01/22.
@@ -39,8 +39,10 @@ public class Same_Char_Part_Arr {
     }
 
     public static void main(String[] args) {
-        char[] sequence = {'A', 'a', 'B', 'B', 'B', 'c', 'C'};
-        int length = sequence.length;
+        Scanner scan = new Scanner(System.in);
+        String str = scan.next();
+        int length = str.length();
+        char[] sequence = str.toCharArray();
         System.out.println("Longest same value part is: "
                 + Arrays.toString(same_char_part_arr(sequence, length)) + "\n");
     }

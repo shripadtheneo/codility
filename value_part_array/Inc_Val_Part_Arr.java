@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  * Created by shri on 2017/01/21.
@@ -36,8 +37,14 @@ public class Inc_Val_Part_Arr {
     }
 
     public static void main(String[] args) {
-        int[] sequence = {1, 3, 4, 2, 9, 7, 3, 8, 1};
-        int length = sequence.length;
+        Scanner scan = new Scanner(System.in);
+        String str = scan.next();
+        int length = str.length();
+        char[] charstr = str.toCharArray();
+        int[] sequence = new int[length];
+        for (int i=0; i<length; i++) {
+            sequence[i] = Character.getNumericValue(charstr[i]);
+        }
         System.out.println("Longest increasing value part is: "
                 + Arrays.toString(inc_val_part_arr(sequence, length)) + "\n");
     }
