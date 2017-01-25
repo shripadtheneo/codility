@@ -6,6 +6,7 @@ import java.util.Scanner;
  */
 public class LongestArray {
 
+    //For finding the longest array
     private static char[] longestArray(char[] sequence, int length, String check){
         int[] longest = {0, 0};
         int[] curr = {0, 0};
@@ -30,6 +31,7 @@ public class LongestArray {
         return Arrays.copyOfRange(sequence, longest[0], longest[1] + 1);
     }
 
+    //For doing the comparison
     private static boolean comparison(char char1, char char2, String check) {
         if (check.equals("Similar char")) {
             return char1 == char2;
@@ -45,7 +47,7 @@ public class LongestArray {
     }
 
     public static void main(String args[]) {
-        
+
         Scanner scan = new Scanner(System.in);
         System.out.println("Please select the type of array manipulation you want to perform: ");
         System.out.println("1. Increasing Value Part Array");
@@ -54,18 +56,35 @@ public class LongestArray {
         String check = "";
         int selection = scan.nextInt();
 
+
+        System.out.println("Please input the array: ");
+        String str = "";
+
         if (selection == 1) {
             check = "Increasing int";
+            str = scan.next();
+            if (!str.chars().allMatch(Character::isDigit)) {
+                System.out.println("Please enter the correct array");
+                System.exit(1);
+            }
         }
         else if (selection == 2) {
             check = "Similar bool";
+            str = scan.next();
+            if (!str.matches("[01]+")) {
+                System.out.println("Please enter the correct array");
+                System.exit(1);
+            }
         }
         else if (selection == 3) {
             check = "Similar char";
+            str = scan.next();
+            if (!str.chars().allMatch(Character::isLetter)) {
+                System.out.println("Please enter the correct array");
+                System.exit(1);
+            }
         }
 
-        System.out.println("Please input the array: ");
-        String str = scan.next();
         int length = str.length();
         char[] sequence = str.toCharArray();
 
