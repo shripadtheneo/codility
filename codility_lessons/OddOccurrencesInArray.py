@@ -38,26 +38,35 @@ arguments).
 Elements of input arrays can be modified.
 """
 
-
+"""
 def solution(A):
     length = len(A)
     if length == 0 or (length % 2) == 0:
         return False
-    valueArray = []
-    flagArray = []
+
+    value_dict = {}
 
     for i in range(length):
-        if A[i] in valueArray:
-            flagArray[valueArray.index(A[i])] += 1
+        if A[i] in value_dict:
+            value_dict[A[i]] += 1
         else:
-            valueArray.append(A[i])
-            flagArray.append(1)
+            value_dict[A[i]] = 1
 
-    checkerLength = len(valueArray)
+    for key, value in value_dict.iteritems():
+        if (value%2) == 1:
+            return key
 
-    for i in range(checkerLength):
-        if (flagArray[i]%2) != 0:
-            return valueArray[i]
+    return False
+"""
+
+
+def solution(A):
+    result = 0
+
+    for number in A:
+        result ^= number
+
+    return result
 
 if __name__ == '__main__':
     print "Please enter the array: "
