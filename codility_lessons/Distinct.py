@@ -26,6 +26,8 @@ Elements of input arrays can be modified.
 def solution(A):
     A.sort()
     length = len(A)
+    if length == 0:
+        return 0
     count = 1
     for index in range(1, length):
         if A[index] != A[index - 1]:
