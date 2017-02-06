@@ -24,6 +24,7 @@ Elements of input arrays can be modified.
 
 
 def solution(A):
+    """
     A.sort()
     length = len(A)
     if length == 0:
@@ -34,6 +35,19 @@ def solution(A):
             count += 1
 
     return count
+    """
+
+    # return len(set(A)) <- Another way
+
+    number_dict = {}
+
+    for element in A:
+        if element in number_dict:
+            number_dict[element] += 1
+        else:
+            number_dict[element] = 1
+
+    return len(number_dict)
 
 if __name__ == '__main__':
     print "Please enter the array: "
